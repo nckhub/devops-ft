@@ -1,0 +1,18 @@
+[
+  {
+    "name": "static-container",
+    "image": "nginx:latest",
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "essential": true,
+    "command": [
+      "/bin/sh",
+      "-c",
+      "echo '<h1>Hello from ECS via Terraform</h1>' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'"
+    ]
+  }
+]
